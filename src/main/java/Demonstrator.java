@@ -26,7 +26,7 @@ public class Demonstrator {
         FireDepartment fd = new FireDepartment();
 
         for (int i = 0; i < 15; i++) {
-            fd.getNewCall(new Call("some street " + i));
+            fd.respondNewCall(new Call("some street " + i));
         }
     }
 
