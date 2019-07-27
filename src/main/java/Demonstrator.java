@@ -4,20 +4,18 @@ import server.task.Server;
 
 public class Demonstrator {
 
-    public static void demonstrateWorkOfServer() {
+    private static void testProcesingRequestByServer(Server server, MethodType methodType){
+        for (int i = 0; i < 10; i++) {
+            server.processRequest(new Request(methodType, "get method " + i));
+        }
+    }
+
+    private static void demonstrateWorkOfServer() {
         Server server = new Server();
-        for (int i = 0; i < 10; i++) {
-            server.processRequest(new Request(MethodType.GET, "get method " + i));
-        }
-        for (int i = 0; i < 10; i++) {
-            server.processRequest(new Request(MethodType.POST, "post method " + i));
-        }
-        for (int i = 0; i < 10; i++) {
-            server.processRequest(new Request(MethodType.PUT, "put method " + i));
-        }
-        for (int i = 0; i < 10; i++) {
-            server.processRequest(new Request(MethodType.DELETE, "delete method " + i));
-        }
+        testProcesingRequestByServer(server,MethodType.GET);
+        testProcesingRequestByServer(server,MethodType.POST);
+        testProcesingRequestByServer(server,MethodType.PUT);
+        testProcesingRequestByServer(server,MethodType.DELETE);
     }
 
 
