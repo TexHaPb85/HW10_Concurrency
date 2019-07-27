@@ -1,5 +1,3 @@
-import firedepartment.task.Call;
-import firedepartment.task.FireDepartment;
 import server.task.MethodType;
 import server.task.Request;
 import server.task.Server;
@@ -22,16 +20,8 @@ public class Demonstrator {
         }
     }
 
-    public static void demostrateWorkOfFireDepartment() {
-        FireDepartment fd = new FireDepartment();
-
-        for (int i = 0; i < 15; i++) {
-            fd.respondNewCall(new Call("some street " + i));
-        }
-    }
 
     public static void main(String[] args) {
-        //demonstrateWorkOfServer();
-        demostrateWorkOfFireDepartment();
+        demonstrateWorkOfServer();
     }
 }
